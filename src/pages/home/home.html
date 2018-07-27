@@ -7,12 +7,59 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content class="card-background-page" padding>
+  <div>
+    <h3 ion-text color="myblue">About Me</h3>
+  </div>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <!--<p>-->
+    <!--If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.-->
+  <!--</p>-->
+
+  <!--<button ion-button secondary menuToggle>Toggle Menu</button>-->
+
+  <!--<div>-->
+    <!--<ion-avatar item-start>-->
+      <!--<img src="assets/imgs/IMAG2142.jpg">-->
+    <!--</ion-avatar>-->
+    <!--&lt;!&ndash;<ion-img src="assets/imgs/IMAG2142.jpg" height="" width="500"></ion-img>&ndash;&gt;-->
+  <!--</div>-->
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/salesforce.png">
+        </ion-thumbnail>
+        <h2>Salesforce</h2>
+        <p>May 2018 - August 2018</p>
+        <button ion-button clear item-end (click)="sfmodal()">More</button>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/newrelic.png">
+        </ion-thumbnail>
+        <h2>New Relic</h2>
+        <p>June 2017 - August 2017</p>
+        <button ion-button clear item-end (click)="nrmodal()">More</button>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/TAG-Labs-Logo-Favicon_COLOR.jpg">
+        </ion-thumbnail>
+        <h2>T.A.G. Labs</h2>
+        <p>June 2016 - January 2017</p>
+        <button ion-button clear item-end (click)="tagModal()">More</button>
+      </ion-item>
+
+    </ion-list>
+  </div>
+  <div>
+    <ion-card>
+      <img src="assets/imgs/SanFrancisco_0.jpg" height="500"/>
+      <div class="card-title">Where Am I Now?</div>
+      <div class="card-subtitle">San Francisco</div>
+    </ion-card>
+  </div>
+
 </ion-content>
