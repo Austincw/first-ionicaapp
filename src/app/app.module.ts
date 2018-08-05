@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 import firebase from 'firebase';
+import {ContactPage} from "../pages/contact/contact";
 
 // Initialize Firebase
 var config = {
@@ -27,7 +28,8 @@ firebase.initializeApp(config);
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    ContactPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ firebase.initializeApp(config);
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    ContactPage
   ],
   providers: [
     StatusBar,
