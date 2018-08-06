@@ -9,7 +9,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Contact</ion-title>
+    <ion-title>Contact Me</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -18,27 +18,27 @@
 
   <ion-list>
     <ion-item>
-      <ion-label id="fname" color="primary">First Name</ion-label>
-      <ion-input placeholder="First Name"></ion-input>
+      <ion-label color="primary">First Name</ion-label>
+      <ion-input id="fname" [(ngModel)]="fname" placeholder="First Name"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label id="lname" color="primary">Last Name</ion-label>
-      <ion-input placeholder="Last Name"></ion-input>
+      <ion-label color="primary">Last Name</ion-label>
+      <ion-input id="lname" [(ngModel)]="lname" placeholder="Last Name"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label id="email" color="primary" stacked>Email Address</ion-label>
-      <ion-input type="email" placeholder="Email"></ion-input>
+      <ion-label color="primary" stacked>Email Address</ion-label>
+      <ion-input id="emailData" [(ngModel)]="emailData" type="email" placeholder="Email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" floating>Type Message Here...</ion-label>
-      <ion-input id="message"></ion-input>
+      <ion-input id="messageData" [(ngModel)]="messageData"></ion-input>
     </ion-item>
 
     <br>
-    <button ion-button align-self-center round>Submit</button>
+    <button ion-button round (click)="sumbitContact()">Submit</button>
 
   </ion-list>
 
