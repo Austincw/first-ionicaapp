@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, NavController, NavParams } from 'ionic-angular';
-
-import firebase from 'firebase';
-import 'firebase/firestore';
+import { ModalController} from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -10,18 +7,7 @@ import 'firebase/firestore';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
-
-    let db = firebase.firestore();
-
-    // db.collection("about").add({
-    //   first_name: "Austin",
-    //   last_name: "Washington"
-    // }).then((data)=>{
-    //   console.log(data)
-    // }).catch((error)=>{
-    //   console.log(error)
-    // });
+  constructor(public modalCtrl: ModalController) {
 
   }
 

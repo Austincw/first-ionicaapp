@@ -23,7 +23,7 @@ export class ContactPage {
   public emailData:string;
   public messageData:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  constructor(private alertCtrl: AlertController) {
 
   }
 
@@ -34,9 +34,9 @@ export class ContactPage {
   public sumbitContact(){
 
     let db = firebase.firestore();
-    let docname = (this.fname+this.emailData).replace(" ", "");
+    let docName = (this.fname+this.emailData).replace(" ", "");
 
-    db.collection("contact").doc(docname).set({
+    db.collection("contact").doc(docName).set({
       firstname: this.fname,
       lastname: this.lname,
       email: this.emailData,
@@ -67,13 +67,13 @@ export class ContactPage {
     alert.present();
   }
 
-  public failAlert() {
-    let alert = this.alertCtrl.create({
-      title: 'Oops!',
-      subTitle: "It seems like you forgot to fill in a field",
-      buttons: ['Ok']
-    });
-    alert.present();
-  }
+  // public failAlert() {
+  //   let alert = this.alertCtrl.create({
+  //     title: 'Oops!',
+  //     subTitle: "It seems like you forgot to fill in a field",
+  //     buttons: ['Ok']
+  //   });
+  //   alert.present();
+  // }
 
 }

@@ -19,7 +19,7 @@ import 'firebase/firestore';
 export class SalesforcePage {
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public viewCtrl: ViewController) {
 
     let db = firebase.firestore();
 

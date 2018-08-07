@@ -18,7 +18,7 @@ import 'firebase/firestore';
 })
 export class TagPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public viewCtrl: ViewController) {
 
     let db = firebase.firestore();
 
