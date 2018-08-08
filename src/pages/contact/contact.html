@@ -15,31 +15,46 @@
 
 
 <ion-content padding>
+  <form [formGroup]="formgroup">
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">First Name</ion-label>
+        <ion-input id="fname" formControlName="fnameV" [(ngModel)]="fname" placeholder="First Name"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="fnameV.hasError('required') && fnameV.touched">
+        <p>Please enter your first name</p>
+      </ion-item>
 
-  <ion-list>
-    <ion-item>
-      <ion-label color="primary">First Name</ion-label>
-      <ion-input id="fname" [(ngModel)]="fname" placeholder="First Name"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label color="primary">Last Name</ion-label>
+        <ion-input id="lname" formControlName="lnameV" [(ngModel)]="lname" placeholder="Last Name"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="lnameV.hasError('required') && lnameV.touched">
+        <p>Please enter your last name</p>
+      </ion-item>
 
-    <ion-item>
-      <ion-label color="primary">Last Name</ion-label>
-      <ion-input id="lname" [(ngModel)]="lname" placeholder="Last Name"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Email Address</ion-label>
+        <ion-input id="emailData" formControlName="emailDataV" [(ngModel)]="emailData" type="email" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="emailDataV.hasError('required') && emailDataV.touched">
+        <p>Please enter an email</p>
+      </ion-item>
+      <ion-item *ngIf="!emailDataV.valid && emailDataV.touched">
+        <p>Please enter a valid email</p>
+      </ion-item>
 
-    <ion-item>
-      <ion-label color="primary" stacked>Email Address</ion-label>
-      <ion-input id="emailData" [(ngModel)]="emailData" type="email" placeholder="Email"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Type Message Here...</ion-label>
+        <ion-input id="messageData" formControlName="messageDataV" [(ngModel)]="messageData"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="messageDataV.hasError('required') && messageDataV.touched">
+        <p>Please enter a message to be sent</p>
+      </ion-item>
 
-    <ion-item>
-      <ion-label color="primary" floating>Type Message Here...</ion-label>
-      <ion-input id="messageData" [(ngModel)]="messageData"></ion-input>
-    </ion-item>
-
-    <br>
-    <button ion-button round (click)="sumbitContact()">Submit</button>
-
-  </ion-list>
+      <br>
+      <button ion-button round (click)="sumbitContact()">Submit</button>
+    </ion-list>
+  </form>
 
 </ion-content>
