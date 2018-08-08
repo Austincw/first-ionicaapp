@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Validators, FormBuilder, FormGroup, FormControl, AbstractControl } from '@angular/forms';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 import firebase from 'firebase';
@@ -22,9 +23,23 @@ export class ContactPage {
   public lname:string;
   public emailData:string;
   public messageData:string;
+  private formgroup: FormGroup;
+  fnameV: AbstractControl;
+  lnameV: AbstractControl;
+  emailDataV: AbstractControl;
+  messageDataV: AbstractControl;
 
-  constructor(private alertCtrl: AlertController) {
-
+  constructor(private alertCtrl: AlertController, private formBuilder: FormBuilder, private navCtrl: NavController) {
+    this.formgroup = formBuilder.group({
+      fnameV: ['', Validators.required],
+      lnameV: ['', Validators.required],
+      emailDataV: new FormControl('', Validators.compose([Validators.required, Validators.email, Validators.minLength(5)])),
+      messageDataV: ['', Validators.required]
+    });
+    this.fnameV = this.formgroup.controls['fnameV'];
+    this.lnameV = this.formgroup.controls['lnameV'];
+    this.emailDataV = this.formgroup.controls['emailDataV'];
+    this.messageDataV = this.formgroup.controls['messageDataV'];
   }
 
   ionViewDidLoad() {
@@ -52,10 +67,7 @@ export class ContactPage {
   }
 
   public clearFields(){
-    this.fname = "";
-    this.lname = "";
-    this.emailData = "";
-    this.messageData = "";
+    this.navCtrl.setRoot(this.navCtrl.getActive().component);
   }
 
   public successAlert() {
